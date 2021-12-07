@@ -16,7 +16,7 @@
             ]
         },
         {
-            "type": "text",
+            "type": "string",
             "label": "Country",
             "required": true
         },
@@ -50,7 +50,7 @@
             ]
         },
         {
-            "type": "text",
+            "type": "string",
             "label": "How many employees does your company or organization have?",
             "required": true
         },

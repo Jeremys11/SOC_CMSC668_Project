@@ -116,8 +116,7 @@ def company_register():
 @app.route('/company_home')
 def company_home():
     username = request.args['username']
-    temp = [1,2,3,4,5,6,7,8,9]
-    return render_template("company_home.html", variable="1234", username=username, temp=temp)
+    return render_template("company_home.html", variable="1234", username=username)
 
 
     

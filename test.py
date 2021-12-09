@@ -17,7 +17,7 @@ object_cols = ['Gender', 'self_employed', 'family_history',
                'mental_health_interview', 'phys_health_interview',
                'mental_vs_physical', 'obs_consequence']
 
-                #age country state #comments
+                #age country state comments family history
 
 values = ['Male','No','No','No','10','No','Yes','Yes','Yes','Yes','Yes','Yes','Yes','No','No','Yes','No','No','Yes','Yes','Yes']
 

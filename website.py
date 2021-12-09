@@ -3,6 +3,7 @@ import json
 import pymysql as pymysql
 import pandas as pd
 from joblib import dump, load
+from build_model import modeloutput
 #from flask_login import LoginManager
 
 
@@ -123,7 +124,12 @@ def results():
     connection.commit()
     cursor.close()
     connection.close()
-    return render_template("results.html")
+    resultoutput = modeloutput()
+    if resultoutput == 0:
+        resultoutput = "We do not recommend that this employee see treatment"
+    else:
+        resultoutput = "We recommend that this employee see treatment"
+    return render_template("results.html", resultoutput=resultoutput)
 
 @app.route('/survey')
 def survey():

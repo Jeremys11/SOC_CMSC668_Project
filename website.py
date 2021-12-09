@@ -1,12 +1,23 @@
 from flask import Flask, render_template, redirect, url_for, request
 import json
 import pymysql as pymysql
+import pandas as pd
+from joblib import dump, load
+#from flask_login import LoginManager
 
 
 #user_database = {"Jeremy":"pass","Bob":"corn"}
 
 ##Definition to run this file
 app = Flask(__name__)
+
+"""login_manager = LoginManager()
+login_manager.init_app(app)
+
+@login_manager.user_loader
+def load_user(user_id):
+    return User.get(user_id)"""
+
 
 ## Homepage
 #Button to login goes to login.html
@@ -69,20 +80,21 @@ def userhome():
     empty_survey = json.load(openfile)
     openfile.close()
     username = request.args['username']
+    #password = request.args['password']
     #return render_template("userhome.html", variable=empty_survey, username=username)
-    return render_template("test_survey.html", variable=empty_survey, username=username)
+    return render_template("userhome.html", variable=empty_survey, username=username)
 
-@app.route('/survey', methods=['GET','POST'])
-def survey():
+@app.route('/results', methods=['GET','POST'])
+def results():
     connection=pymysql.connect(host='localhost', user='root', password='mansipatel', db='SOC')
     # name=request.form['name']
 
-    age=request.form['age']
+    age=request.form['age']#t
     gender=request.form['gender']
-    country=request.form['country']
-    state=request.form['state']
+    country=request.form['country']#t
+    state=request.form['state']#t
     selfemp=request.form['selfemp']
-    famhist=request.form['famhist']
+    famhist=request.form['famhist']#t
     treat=request.form['treat']
     workinter=request.form['workinter']
     noemp=request.form['noemp']
@@ -102,7 +114,7 @@ def survey():
     phyinterview=request.form['phyinterview']
     menvsphy=request.form['menvsphy'].replace("'","''")
     obsconsq=request.form['obsconsq']
-    comments=request.form['comments']
+    comments=request.form['comments']#t
     print(comments)
     cursor=connection.cursor()
     # INSERT INTO survey (id,Age,Gender,Country,state,self_employed,family_history,treatment,work_interfere,no_employees,remote_work,tech_company,benefits,care_options,seek_help,anonymity,leave1,mental_health_consequence,phys_health_consequence,coworkers,supervisor,mental_health_interview,mental_vs_physical,obs_consequence,comments) VALUES ('{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}','{}');
@@ -111,8 +123,11 @@ def survey():
     connection.commit()
     cursor.close()
     connection.close()
-    return render_template("register.html")
+    return render_template("results.html")
 
+@app.route('/survey')
+def survey():
+    return render_template("test_survey.html")
 
 ##
 ##  Company Pages

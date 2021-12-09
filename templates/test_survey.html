@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+    <!--<script src="https://use.fontawesome.com/085e14f1d1.js"></script>-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/form2.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+
+</head>
+<body>
+    <div class="container">
+        <h1 class="brand"><span>Survey Form </span></h1>
+        <!--<div class="wrapper animated bounceInLeft">-->
+            <div class="contact">
+                <form action="http://localhost:5000/survey" method="post">
+                    <!--<p>
+                        <label>Name</label>
+                        <input type="text" name="name" value="">
+                    </p>-->
+                    <!-- <p>
+                        <label>Last Name</label>
+                        <input type="text" name="company" value="">
+                    </p> -->
+                    <p>
+                        <label>Age</label>
+                        <input type="number" name="age" value="">
+                    </p>
+                    <p>
+                        <label>Gender</label>
+                        <input type="text" name="gender" value="">
+                    </p>
+                    <p>
+                        <label>Country</label>
+                        <input type="text" name="country" value="">
+                    </p>
+                    <p>
+                        <label>State</label>
+                        <input type="text" name="state" value="">
+                    </p>
+                    <p class="full">
+                        <label>Self Employed</label>
+                        <select class="full" name="selfemp">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Family History?</label>
+                        <select class="full" name="famhist">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Treatment?</label>
+                        <select class="full" name="treat">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Work Interference?</label>
+                        <select class="full" name="workinter">
+                            <option>Often</option>
+                            <option>Rarely</option>
+                            <option>Never</option>
+                            <option>Sometimes</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Number Of Employees</label>
+                        <input type="text" name="noemp" value="">
+                    </p>
+                    <p class="full">
+                        <label>Remote Work?</label>
+                        <select class="full" name="remote">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Tech Company?</label>
+                        <select class="full" name="techcomp">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Benefits?</label>
+                        <select class="full" name="benefits">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Don't know</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Care Options?</label>
+                        <select class="full" name="care">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Not sure</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Wellness Program?</label>
+                        <select class="full" name="wellprog">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Don't know</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Seek Help?</label>
+                        <select class="full" name="help">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Don't know</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Anonymity?</label>
+                        <select class="full" name="anonymity">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Don't know</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Leave?</label>
+                        <select class="full" name="leave">
+                            <option>Somewhat easy</option>
+                            <option>Very Easy</option>
+                            <option>Somewhat Difficult</option>
+                            <option>Very Difficult</option>
+                            <option>Don't know</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Mental Health Consequences?</label>
+                        <select class="full" name="menconsequences">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Maybe</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Physical Health Consequences?</label>
+                        <select class="full" name="phyconsequences">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Maybe</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Coworkers?</label>
+                        <select class="full" name="coworkers">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Some of them</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Supervisor?</label>
+                        <select class="full" name="supervisor">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Some of them</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Mental Health Interview</label>
+                        <select class="full" name="meninterview">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Maybe</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Physical Health Interview</label>
+                        <select class="full" name="phyinterview">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Maybe</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Mental VS Physical?</label>
+                        <select class="full" name="menvsphy">
+                            <option>Yes</option>
+                            <option>No</option>
+                            <option>Don't know</option>
+                        </select>
+                    </p>
+                    <p class="full">
+                        <label>Observed Consequence?</label>
+                        <select class="full" name="obsconsq">
+                            <option>Yes</option>
+                            <option>No</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label>Comments</label>
+                        <input type="text" name="comments" value="">
+                    </p>
+                    <!-- <p class="full">
+                        <label>Scheme</label>
+                        <select class="full" name="scheme">
+                            <option>Deluxe Room</option>
+                            <option>Executive Room</option>
+                            <option>Premium Room</option>
+                        </select>
+                    </p> -->
+
+                    <!-- <p class="full">
+                        <label>Booking For</label>
+                        <input type="text" name="datefilter" value="" />
+
+                                <script type="text/javascript">
+                                        $(function() {
+
+                                            $('input[name="datefilter"]').daterangepicker({
+                                                      autoUpdateInput: false,
+                                                      locale: {
+                                                                  cancelLabel: 'Clear'
+                                                      }
+                                             });
+
+                                            $('input[name="datefilter"]').on('apply.daterangepicker', function(ev, picker) {
+                                            $(this).val(picker.startDate.format('MM/DD/YYYY') + ' - ' + picker.endDate.format('MM/DD/YYYY'));
+                                            });
+                                            $('input[name="datefilter"]').on('cancel.daterangepicker', function(ev, picker) {
+                                                 $(this).val('');
+                                            });
+                                        });
+                            </script>
+                    </p> -->
+
+                    <p class="full">
+                            <button type="submit" name="Submit">Submit</button>
+                    </p>
+                    <p class="full">
+                            <button type="reset" name="Reset">Reset</button>
+                    </p>
+                    <p class="full">
+                            <button><a href="login.html" style="color:black; onHover:white;">Back To The Website</a></button>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
